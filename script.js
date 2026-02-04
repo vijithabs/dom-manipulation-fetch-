@@ -62,6 +62,7 @@ fetch("https://fakestoreapi.com/products")
       price.innerText = data[i].price;
       img.src = data[i].image;
       rating.innerText = data[i].rating.rate;
+      
 
       post.append(name);
       post.append(price);
@@ -74,18 +75,11 @@ fetch("https://fakestoreapi.com/products")
       post.id = "card";
       img.className = "images";
       ratingBar.className = "rating-bar";
-      ratingClr.className = "rating-Clr";
+      ratingClr.className = "ratingsClr";
 
       let percentage = (data[i].rating.rate / 5) * 100;
+      ratingClr.style.width = percentage + "%";
 
-      if (rating ==5) 
-        ratingClr.style.width = percentage+"%";
-      }
-      else if (rating>=4 && rating<5) {
-         ratingClr.style.width =   percentage+"%";
-        
-      }else if (rating>=3 && rating<4) {
-        ratingClr.style.width =   percentage+"%";
-      }
+   
     }
   });
